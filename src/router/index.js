@@ -56,6 +56,10 @@ export default new Router({
                 {
                     path: '/userAccountEdit',
                     component: resolve => require(['../components/view/user/account/Edit.vue'], resolve)    // 用户列表
+                },
+                {
+                    path: '/userAccountTree',
+                    component: resolve => require(['../components/view/user/account/Tree.vue'], resolve)    // 用户列表
                 }
             ]
         },

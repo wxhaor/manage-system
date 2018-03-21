@@ -21,7 +21,7 @@
             </el-table-column>
             <el-table-column prop="username" label="用户名" sortable width="150">
             </el-table-column>
-            <el-table-column prop="password" label="密码" width="120">
+            <el-table-column prop="password" label="密码" width="150">
             </el-table-column>
             <el-table-column prop="createTime" label="创建时间" width="120" :formatter="formatter">
             </el-table-column>
@@ -82,8 +82,8 @@
                 let self = this;
 
                 if (process.env.NODE_ENV === 'development') {
-//                    self.url = 'http://192.168.253.2:8083/userAccount/page';
-                    self.url = 'http://localhost:8083/userAccount/page';
+                    self.url = 'http://192.168.253.2:8083/userAccount/page';
+//                    self.url = 'http://localhost:8083/userAccount/page';
                 }
                 ;
                 self.$axios.post(self.url, {page: self.cur_page}).then((res) => {
@@ -93,6 +93,7 @@
             },
             search() {
                 this.is_search = true;
+                this.$router.push({path: '/userAccountTree'})
             },
             formatter(row, column) {
 

@@ -6,7 +6,10 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';    // 默认主题
 // import '../static/css/theme-green/index.css';       // 浅绿色主题
 import "babel-polyfill";
+import 'vue-tree-halower/dist/halower-tree.min.css' // you can customize the style of the tree
+import VTree from 'vue-tree-halower'
 
+Vue.use(VTree);
 Vue.use(ElementUI);
 Vue.prototype.$axios = axios;
 new Vue({
