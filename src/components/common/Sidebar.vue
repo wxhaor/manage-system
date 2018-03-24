@@ -84,7 +84,19 @@
                         subs: [
                             {
                                 index: 'userAccountTable',
-                                title: '账户管理'
+                                title: '用户信息'
+                            }
+                        ]
+                    },
+
+                    {
+                        icon: 'el-icon-upload',
+                        index: '7',
+                        title: '博客管理',
+                        subs: [
+                            {
+                                index: 'blogDeskIndex',
+                                title: '写作台'
                             }
                         ]
                     }

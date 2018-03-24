@@ -49,17 +49,24 @@ export default new Router({
                     path: '/drag',
                     component: resolve => require(['../components/page/DragList.vue'], resolve)    // 拖拽列表组件
                 },
+
                 {
                     path: '/userAccountTable',
-                    component: resolve => require(['../components/view/user/account/Table.vue'], resolve)    // 用户列表
+                    component: resolve => require(['../components/view/user/info/Table.vue'], resolve)    // 用户列表
                 },
                 {
                     path: '/userAccountEdit',
-                    component: resolve => require(['../components/view/user/account/Edit.vue'], resolve)    // 用户列表
+                    component: resolve => require(['../components/view/user/info/Edit.vue'], resolve)    // 用户列表
                 },
                 {
                     path: '/userAccountTree',
-                    component: resolve => require(['../components/view/user/account/Tree.vue'], resolve)    // 用户列表
+                    component: resolve => require(['../components/view/user/info/Tree.vue'], resolve)    // 用户列表
+                },
+
+
+                {
+                    path: '/blogDeskIndex',
+                    component: resolve => require(['../components/view/blog/desk/Index.vue'], resolve)    // 博客写作台
                 }
             ]
         },

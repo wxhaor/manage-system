@@ -2,18 +2,13 @@
     <div class="table">
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-menu"></i> 表格</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理 </el-breadcrumb-item>
                 <el-breadcrumb-item>基础表格</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="handle-box">
-            <el-button type="primary" icon="delete" class="handle-del mr10" @click="delAll">批量删除</el-button>
-            <el-select v-model="select_cate" placeholder="筛选省份" class="handle-select mr10">
-                <el-option key="1" label="广东省" value="广东省"></el-option>
-                <el-option key="2" label="湖南省" value="湖南省"></el-option>
-            </el-select>
-            <el-input v-model="select_word" placeholder="筛选关键词" class="handle-input mr10"></el-input>
-            <el-button type="primary" icon="search" @click="search">搜索</el-button>
+            <el-button type="primary"  @click="tree">tree 测试</el-button>
+            <el-button type="primary"  @click="add">手动添加</el-button>
         </div>
         <el-table :data="data" border style="width: 100%" ref="multipleTable" @selection-change="handleSelectionChange">
             <el-table-column type="selection" width="55"></el-table-column>
@@ -82,8 +77,7 @@
                 let self = this;
 
                 if (process.env.NODE_ENV === 'development') {
-                    self.url = 'http://192.168.253.2:8083/userAccount/page';
-//                    self.url = 'http://localhost:8083/userAccount/page';
+                    self.url = 'http://192.168.253.2:8083/userInfo/listAll';
                 }
                 ;
                 self.$axios.post(self.url, {page: self.cur_page}).then((res) => {
@@ -91,9 +85,11 @@
                     self.tableData = res.data;
                 })
             },
-            search() {
-                this.is_search = true;
+            tree() {
                 this.$router.push({path: '/userAccountTree'})
+            },
+            add(){
+                this.$router.push({path: '/userAccountEdit'});
             },
             formatter(row, column) {
 
