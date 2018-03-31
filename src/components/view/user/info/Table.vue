@@ -24,7 +24,7 @@
             </el-table-column>
 
             <el-table-column label="操作" width="180">
-                <template scope="scope">
+                <template >
                     <el-button size="small"
                                @click="handleEdit(scope.$index, scope.row)">编辑
                     </el-button>
@@ -45,6 +45,8 @@
 </template>
 
 <script>
+    import ManageApi from 'src/apiclient/ManageApi'
+
     export default {
         data() {
             return {
@@ -58,6 +60,9 @@
                 is_search: false
             }
         },
+//        components:{
+//            ManageApi
+//        },
         created() {
             this.getData();
         },
@@ -65,6 +70,7 @@
             data() {
                 const self = this;
 //                debugger
+                console.log(self.tableData);
                 return self.tableData;
             }
         },
@@ -75,15 +81,21 @@
             },
             getData() {
                 let self = this;
+//debugger
+                 ManageApi.listAll().then(res => {
 
-                if (process.env.NODE_ENV === 'development') {
-                    self.url = 'http://192.168.253.2:8083/userInfo/listAll';
-                }
-                ;
-                self.$axios.post(self.url, {page: self.cur_page}).then((res) => {
-//                    debugger
-                    self.tableData = res.data;
-                })
+//                console.log(xxx);
+                     debugger
+                     self.tableData = res;
+                 });
+//                console.log(self.tableData)
+//                if (process.env.NODE_ENV === 'development') {
+//                    self.url = 'http://192.168.253.2:8083/userInfo/listAll';
+//                }
+//                ;
+//                self.$axios.post(self.url, {page: self.cur_page}).then((res) => {
+//                    self.tableData = res.data;
+//                })
             },
             tree() {
                 this.$router.push({path: '/userAccountTree'})
@@ -123,7 +135,7 @@
     }
 </script>
 
-<style scoped>
+<style >
     .handle-box {
         margin-bottom: 20px;
     }
