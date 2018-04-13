@@ -2,12 +2,11 @@
     <div class="table">
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理 </el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-menu"></i> food manage </el-breadcrumb-item>
                 <el-breadcrumb-item>基础表格</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="handle-box">
-            <el-button type="primary"  @click="tree">tree 测试</el-button>
             <el-button type="primary"  @click="add">手动添加</el-button>
         </div>
         <el-table :data="data" border style="width: 100%" ref="multipleTable" @selection-change="handleSelectionChange">
@@ -82,26 +81,16 @@
             getData() {
                 let self = this;
 //debugger
-                 ManageApi.listAll().then(res => {
+//                 ManageApi.listAll().then(res => {
+//
+//                     debugger
+//                     self.tableData = res;
+//                 });
 
-//                console.log(xxx);
-                     debugger
-                     self.tableData = res;
-                 });
-//                console.log(self.tableData)
-//                if (process.env.NODE_ENV === 'development') {
-//                    self.url = 'http://192.168.253.2:8083/userInfo/listAll';
-//                }
-//                ;
-//                self.$axios.post(self.url, {page: self.cur_page}).then((res) => {
-//                    self.tableData = res.data;
-//                })
             },
-            tree() {
-                this.$router.push({path: '/userInfoTree'})
-            },
+
             add(){
-                this.$router.push({path: '/userInfoEdit'});
+                this.$router.push({path: '/foodInfoEdit'});
             },
             formatter(row, column) {
 
@@ -112,7 +101,7 @@
             },
             handleEdit(index, row) {
                 this.$message('编辑第' + (index + 1) + '行');
-                this.$router.push({path: '/userInfoEdit'})
+                this.$router.push({path: '/foodInfoEdit'})
             },
             handleDelete(index, row) {
                 this.$message.error('删除第' + (index + 1) + '行');

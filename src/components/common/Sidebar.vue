@@ -83,7 +83,7 @@
                         title: '用户管理',
                         subs: [
                             {
-                                index: 'userAccountTable',
+                                index: 'userInfoTable',
                                 title: '用户信息'
                             }
                         ]
@@ -97,6 +97,18 @@
                             {
                                 index: 'blogDeskIndex',
                                 title: '写作台'
+                            }
+                        ]
+                    },
+
+                    {
+                        icon: 'el-icon-upload2',
+                        index: '8',
+                        title: 'food manage',
+                        subs: [
+                            {
+                                index: 'foodInfoTable',
+                                title: 'food'
                             }
                         ]
                     }

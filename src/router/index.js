@@ -51,16 +51,24 @@ export default new Router({
                 },
 
                 {
-                    path: '/userAccountTable',
+                    path: '/userInfoTable',
                     component: resolve => require(['../components/view/user/info/Table.vue'], resolve)    // 用户列表
                 },
                 {
-                    path: '/userAccountEdit',
+                    path: '/userInfoEdit',
                     component: resolve => require(['../components/view/user/info/Edit.vue'], resolve)    // 用户列表
                 },
                 {
-                    path: '/userAccountTree',
+                    path: '/userInfoTree',
                     component: resolve => require(['../components/view/user/info/Tree.vue'], resolve)    // 用户列表
+                },
+                {
+                    path: '/foodInfoTable',
+                    component: resolve => require(['../components/view/food/info/Table.vue'], resolve)    // 用户列表
+                },
+                {
+                    path: '/foodInfoEdit',
+                    component: resolve => require(['../components/view/food/info/Edit.vue'], resolve)    // 用户列表
                 },
 
 
